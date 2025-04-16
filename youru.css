@@ -309,10 +309,11 @@ body {
     color: #ff4654;
 }
 
-.menu-toggle {
-    display: none;
+@media (min-width:768px) {
+    .menu-toggle {
+        display: none;
+    }
 }
-
 @media (max-width: 768px) {
     body, html {
         height: 100%;

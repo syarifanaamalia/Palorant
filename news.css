@@ -269,7 +269,6 @@ body {
     .menu-toggle {
         display: none;
     }
-    
 }
 @media (max-width: 768px) {
     .bg {
