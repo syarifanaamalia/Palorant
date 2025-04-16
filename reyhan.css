@@ -364,7 +364,7 @@ body {
 
     .navbar ul {
         flex-direction: column;
-        align-items: center;
+        align-items: flex-start;
         margin: 0;
         padding: 0;
         width: 100%;
@@ -373,16 +373,6 @@ body {
     .navbar ul li {
         margin: 15px 0;
         width: 100%;
-        margin-right: 50px;
-        margin-left: 40px;
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        align-items: center;
-        color: white;
-        text-align: center;
-        position: relative;
-        height: 100%;
     }
 
     .navbar ul li a {
@@ -403,13 +393,32 @@ body {
     }
 
     .menu-toggle {
-        position: absolute;
+        position: fixed;
         top: 20px;
         right: 20px;
         font-size: 24px;
         color: white;
         cursor: pointer;
         z-index: 1100;
+    }
+
+    .menu-toggle-close {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        font-size: 24px;
+        color: white;
+        cursor: pointer;
+        z-index: 1100;
+        display: none;
+    }
+
+    .menu-toggle-close.active {
+        display: block;
+    }
+
+    .menu-toggle.hidden {
+        display: none;
     }
 
     .report-button {
@@ -431,7 +440,7 @@ body {
         transform: scale(1.05);
         box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
     }
-
+    
     .box-container {
         height: 54%;
         width: 90%;
