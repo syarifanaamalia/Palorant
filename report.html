@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Report</title>
+    <link rel="stylesheet" href="report.css">
+</head>
+<body>
+    <div class="bg">
+        <div class="menu-toggle">☰</div>
+        <div class="menu-toggle-close">✖</div>
+        <div class="navbar">
+            <div class="logo">
+                <img src="Assets/GiotGameLogo.png" alt="logo">
+            </div>
+            <ul>
+                <li><a href="homePage.html">Home</a></li>
+                <li><a href="agents.html">Agents</a></li>
+                <li><a href="maps.html">Maps</a></li>
+                <li><a href="news.html">News</a></li>
+                <li><a href="report.html"><button class="report-button">Report</button></a></li>
+            </ul>
+        </div>
+        <div class="report-wrapper">
+        <div class="report-container">
+            <h1>Report an Issue</h1>
+            <form action="#" method="POST">
+                <label for="name">Username:</label>
+                <input type="text" id="name" name="name" placeholder="Enter your Username" required>
+                
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+                <label for="server">Server:</label>
+                <input type="server" id="server" name="server" placeholder="Enter your server" required>
+                
+                <label for="issue">Issue:</label>
+                <textarea id="issue" name="issue" placeholder="Describe the issue..." rows="5" required></textarea>
+                <div class="checkbox-container">
+                    <input type="checkbox" id="followup">
+                    <label for="followup">I agree to receive follow-up emails regarding this bug report.</label>
+                </div>
+                <button type="submit" class="submit-button">Submit</button>
+            </form>
+
+        </div>
+    </div>
+    </div>
+    <div class="footer">
+        <div class="logo">
+            <img src="Assets/GiotGameLogo.png" alt="logo">
+        </div>
+        <div class="giotText">
+            <h1>Giot Games</h1>
+        </div>
+        <div class="footer-content">
+            <p>&copy; 2023 Palorant. All rights reserved.</p>
+            <ul>
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Terms of Service</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+    <script src="report.js"></script>
+</body>
+</html>

@@ -1,0 +1,637 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.bg {
+    flex: 1;
+    background: url('Assets/agents-bg.png') no-repeat center center/cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    color: white;
+    text-align: center;
+    position: relative;
+    min-height: 100vh;
+}
+
+.navbar {
+    font-family: 'Roboto', sans-serif;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(1px);
+    padding: 10px 20px;
+    z-index: 10;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.navbar .logo {
+    display: flex;
+    align-items: center;
+    margin-left: 0;
+    padding-left: 30px;
+}
+
+.navbar .logo img {
+    height: 50px;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    margin-right: 20px;
+}
+
+.navbar ul li {
+    margin: 0 15px;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.navbar ul li a:hover {
+    color: #ff4654;
+}
+
+.report-button {
+    background-color: #ff4654;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    padding: 4px 15px;
+    margin-right: 50px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.report-button:hover {
+    background-color: #ff2a3b;
+    transform: scale(1.05);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
+}
+
+.box-container {
+    height: 400px;
+    width: 700px;
+    background-color: rgba(185, 48, 56, 0.7);
+    padding: 15px;
+    border-radius: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    text-align: justify;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.agents-header {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background-color: rgba(189, 57, 68, 0.7);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    height: 30px;
+}
+
+.agent-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    color: white;
+}
+
+.agent-image img {
+    margin-top: 0;
+    width: 360px;
+    height: auto;
+    position: absolute;
+    top: 217px;
+    left: 370px;
+    transform: translateY(-50%);
+}
+
+.agent-logo img {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    padding: 10px;
+}
+
+.agent-info h1 {
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+    margin: 0;
+    font-family: 'Valorant', sans-serif;
+    src: url('Assets/Valo.ttf');
+    font-weight: 300;
+}
+
+.agent-info h2 {
+    font-size: 18px;
+    font-weight: normal;
+    color: white;
+    margin: 0;
+    font-family: 'Valorant', sans-serif;
+    src: url('Assets/Valo.ttf');
+    font-weight: 300;
+}
+
+.agent-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 20px;
+    max-width: 400px;
+    position: absolute;
+    top: 50%;
+    transform: translate(-100%, -50%);
+}
+
+.agent-description {
+    width: 50%;
+    height: 70%;
+    background-color: rgba(51, 9, 18, 0.6);
+    padding: 15px;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    text-align: justify;
+    position: relative;
+    top: 20px;
+}
+
+.agent-abilities {
+    position: relative;
+    left: -430px;
+    top: 25%;
+    margin-top: 14%;
+}
+
+.agent-abilities ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
+}
+
+.agent-abilities ul li {
+    position: relative;
+    text-align: center;
+}
+
+.agent-abilities ul li img {
+    width: 60px;
+    height: 60px;
+    border-radius: 30%;
+    background-color: rgba(51, 9, 18, 0.6);
+    padding: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    object-fit: cover;
+    margin-left: 30px;
+    cursor: pointer;
+}
+
+.agent-abilities ul li .tooltip {
+    display: none;
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.9);
+    color: white;
+    padding: 8px 12px;
+    border-radius: 8px;
+    font-size: 14px;
+    text-align: center;
+    white-space: nowrap;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    z-index: 10;
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.agent-abilities ul li:hover .tooltip {
+    display: block;
+    opacity: 1;
+    transform: translateX(-50%) translateY(5px);
+    font-size: 14px;
+}
+
+.agent-description p {
+    font-size: 22px;
+    line-height: 1.6;
+    font-family: 'Helvetica', sans-serif;
+    src: url('Assets/Helvetica.ttf');
+    font-weight: 500;
+    align-items: center;
+}
+
+.footer {
+    background-color: #000000;
+    color: white;
+    text-align: center;
+    padding: 20px 10px;
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.footer .logo img {
+    width: 55px;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.footer .giotText h1 {
+    font-size: 40px;
+    margin: 10px 0;
+    color: #ff4654;
+    font-family: 'apex', sans-serif;
+    word-spacing: -0.1rem;
+    letter-spacing: 0.4rem;
+}
+
+.footer-content {
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+.footer-content p {
+    margin: 5px 0;
+}
+
+.footer-content ul {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.footer-content ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 14px;
+    transition: color 0.3s ease;
+}
+
+.footer-content ul li a:hover {
+    color: #ff4654;
+}
+
+@media (max-width: 768px) {
+    body, html {
+        height: 100%;
+        overflow-y: auto;
+    }
+
+    .bg {
+        flex: 1;
+        background: url('Assets/agents-bg.png') no-repeat center center/cover;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        color: white;
+        text-align: center;
+        position: relative;
+        min-height: 100vh;
+    }
+
+    .navbar {
+        display: none;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        background-color: #333;
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1000;
+        padding: 10px;
+    }
+
+    .navbar.active {
+        display: flex;
+    }
+
+    .navbar .logo {
+        margin-bottom: 20px;
+        font-size: 24px;
+        font-weight: bold;
+        color: white;
+        margin-left: 0;
+        padding-right: 5px;
+    }
+
+    .navbar ul {
+        flex-direction: column;
+        align-items: center;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+    }
+
+    .navbar ul li {
+        margin: 15px 0;
+        width: 100%;
+        margin-right: 50px;
+        margin-left: 40px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        color: white;
+        text-align: center;
+        position: relative;
+        height: 100%;
+    }
+
+    .navbar ul li a {
+        font-size: 18px;
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+        padding: 10px 0;
+        display: block;
+        width: 100%;
+        border-left: 3px solid transparent;
+        transition: all 0.3s ease;
+    }
+
+    .navbar ul li a:hover {
+        color: #ff4654;
+        border-left: 3px solid #ff4654;
+    }
+
+    .menu-toggle {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        font-size: 24px;
+        color: white;
+        cursor: pointer;
+        z-index: 1100;
+    }
+
+    .report-button {
+        background-color: #ff4654;
+        color: white;
+        border: none;
+        border-radius: 25px;
+        padding: 4px 15px;
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        margin: auto 0;
+    }
+
+    .report-button:hover {
+        background-color: #ff2a3b;
+        transform: scale(1.05);
+        box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
+    }
+
+    .box-container {
+        height: 54%;
+        width: 90%;
+        padding: 10px;
+        border-radius: 15px;
+        margin-top: 10px;
+        margin-bottom: 20px;
+        padding-top: 15px;
+        top: 43%;
+        margin: auto;
+    }
+
+    .agents-header {
+        display: flex;
+        gap: 10px;
+        background-color: rgba(189, 57, 68, 0.7);
+        padding: 20px;
+        border-radius: 15px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        height: 30px;
+    }
+
+    .agent-logo img {
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+        left: 10px;
+    }
+
+    .agent-image img {
+        width: 260px;
+        top: 60%;
+        left: 30%;
+    }
+
+    .agent-info h1 {
+        font-size: 24px;
+        font-weight: bold;
+        color: white;
+        font-family: 'Valorant', sans-serif;
+        src: url('Assets/Valo.ttf');
+        font-weight: 300;
+        left: 10px;
+    }
+
+    .agent-info h2 {
+        font-size: 14px;
+    }
+
+    .agent-description {
+        width: 55%;
+        height: 60%;
+        background-color: rgba(51, 9, 18, 0.6);
+        padding: 10px;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        text-align: justify;
+        line-height: 1.5;
+        margin-top: 10px;
+        margin-bottom: 20px;
+    }
+
+    .agent-description p {
+        font-size: 16px;
+        line-height: 1.5;
+    }
+
+    .agent-abilities {
+        position: static;
+        margin-top: 20px;
+        justify-content: center;
+        flex-direction: row;
+        margin-right: 20px;
+    }
+
+    .agent-abilities ul {
+        list-style: none;
+        padding: 0;
+        margin-top: 140%;
+        display: flex;
+        flex-direction: row;
+        gap: 2px;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    .agent-abilities ul li img {
+        width: 45px;
+        height: 45px;
+        border-radius: 30%;
+        background-color: rgba(51, 9, 18, 0.6);
+        padding: 5px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        object-fit: cover;
+        cursor: pointer;
+    }
+
+    .agent-abilities ul li {
+        position: relative;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .agent-abilities ul li .tooltip {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 70%;
+        transform: translateX(-50%);
+        background-color: rgba(0, 0, 0, 0.9);
+        color: white;
+        padding: 14px 15px;
+        border-radius: 8px;
+        font-size: 14px;
+        text-align: center;
+        white-space: normal;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        z-index: 10;
+        opacity: 0;
+        transition: opacity 0.3s ease, transform 0.3s ease;
+        max-width: 480px;
+        word-wrap: break-word;
+        width: 120%;
+        max-width: 480px;
+    }
+
+    .agent-abilities ul li:hover .tooltip {
+        display: block;
+        opacity: 1;
+        transform: translateX(-50%) translateY(5px);
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    .menu-toggle {
+        display: none;
+    }
+
+    .agent-abilities {
+        position: static;
+        margin-top: 35%;
+        justify-content: left;
+        flex-direction: row;
+        margin-right: 50%;
+    }
+
+    .agent-abilities ul {
+        list-style: none;
+        padding: 0;
+        margin-top: 140%;
+        display: flex;
+        flex-direction: row;
+        gap: 2px;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    .agent-abilities ul li img {
+        width: 45px;
+        height: 45px;
+        border-radius: 30%;
+        background-color: rgba(51, 9, 18, 0.6);
+        padding: 5px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        object-fit: cover;
+        cursor: pointer;
+    }
+
+    .agent-abilities ul li {
+        position: relative;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .agent-abilities ul li .tooltip {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 70%;
+        transform: translateX(-50%);
+        background-color: rgba(0, 0, 0, 0.9);
+        color: white;
+        padding: 14px 15px;
+        border-radius: 8px;
+        font-size: 14px;
+        text-align: center;
+        white-space: normal;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        z-index: 10;
+        opacity: 0;
+        transition: opacity 0.3s ease, transform 0.3s ease;
+        max-width: 480px;
+        word-wrap: break-word;
+        width: 120%;
+        max-width: 480px;
+    }
+
+    .agent-abilities ul li:hover .tooltip {
+        display: block;
+        opacity: 1;
+        transform: translateX(-50%) translateY(5px);
+    }
+}
