@@ -309,6 +309,10 @@ body {
     color: #ff4654;
 }
 
+.menu-toggle {
+    display: none;
+}
+
 @media (max-width: 768px) {
     body, html {
         height: 100%;
