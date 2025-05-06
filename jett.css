@@ -1,3 +1,7 @@
+@font-face {
+    font-family: 'Valorant';
+    src: url('Assets/Valo.ttf') format('truetype');
+}
 body {
     margin: 0;
     font-family: Arial, sans-serif;
@@ -63,6 +67,10 @@ body {
     font-size: 16px;
     font-weight: bold;
     transition: color 0.3s;
+}
+
+.navbar ul li a.active{
+    color: #ff4654;
 }
 
 .navbar ul li a:hover {
@@ -155,7 +163,7 @@ body {
     color: white;
     margin: 0;
     font-family: 'Valorant', sans-serif;
-    src: url('Assets/Valo.ttf');
+    src: url('Assets/Valo.ttf');    
     font-weight: 300;
 }
 
@@ -311,6 +319,10 @@ body {
 
 @media (min-width:768px) {
     .menu-toggle {
+        display: none;
+    }
+
+    .menu-toggle-close {
         display: none;
     }
 }

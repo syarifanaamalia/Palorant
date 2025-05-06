@@ -65,6 +65,10 @@ body {
     transition: color 0.3s;
 }
 
+.navbar ul li a.active{
+    color: #ff4654;
+}
+
 .navbar ul li a:hover {
     color: #ff4654;
 }
@@ -313,6 +317,10 @@ body {
     .menu-toggle {
         display: none;
     }
+
+    .menu-toggle-close {
+        display: none;
+    }
 }
 
 @media (max-width: 768px) {
@@ -440,7 +448,7 @@ body {
         transform: scale(1.05);
         box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
     }
-    
+
     .box-container {
         height: 54%;
         width: 90%;

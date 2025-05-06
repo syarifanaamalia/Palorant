@@ -1,3 +1,8 @@
+@font-face {
+    font-family: 'apex';
+    src: url('Assets/apex.ttf') format('truetype');
+}
+
 body {
     margin: 0;
     padding: 0;
@@ -67,6 +72,11 @@ body {
     transition: color 0.3s;
 }
 
+.navbar ul li a.active{
+    color: #ff4654;
+}
+
+
 .navbar ul li a:hover {
     color: #ff4654;
 }
@@ -92,40 +102,35 @@ body {
 }
 
 .content {
-    text-align: right;
     color: white;
-    max-width: 100%;
-    margin-top: 100px;
-    margin-bottom: 80px;
+    max-width: 600px; 
+    margin: 100px auto 80px auto;
     padding: 20px;
     display: flex;
     flex-direction: column;
-    align-items: flex-end;
+    align-items: flex-start; 
+    text-align: left; 
+    margin-left: 50%;
 }
 
 .content h1 {
     font-size: 55px;
-    margin-bottom: 10px;
-    font-family: 'apex', sans-serif;
-    color: #ff4654;
-    letter-spacing: 1px;
+    margin-bottom: 5px;
+    font-family: 'apex';
+    color: #b93038;
+    letter-spacing: 5px;
     line-height: 1;
-    text-align: right;
-    position: relative;
-    left: 0;
-    margin-right: 200px;
+    text-align: left;
 }
 
 .content .par {
-    font-size: 18px;
-    line-height: 1.8;
-    background-color: rgba(0, 0, 0, 0.7);
-    padding: 10px 15px;
-    border-radius: 8px;
-    width: 80vh;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-    text-align: justify;
-    margin-left: 550px;
+    margin: 0;
+    font-size: 24px;
+    color: rgb(0, 0, 0);
+    width: 80%;
+    text-align: left;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 600;
 }
 
 .footer {
@@ -190,6 +195,7 @@ body {
 }
 
 @media (max-width: 768px) {
+    
     .bg {
         flex: 1;
         background: url('Assets/homepae-mobile-bg.png') no-repeat center center/cover;
@@ -303,40 +309,36 @@ body {
     }
 
     .content {
-        position: static;
-        text-align: center;
+        color: white;
         max-width: 90%;
-        margin: 40% auto 20px auto;
+        margin: 150px auto 40px auto;
+        padding: 20px;
         display: flex;
         flex-direction: column;
         align-items: center;
-        gap: 10px;
+        text-align: center;
     }
-
+    
     .content h1 {
         font-size: 40px;
-        margin-bottom: 10px;
-        font-family: 'apex', sans-serif;
-        color: #ff4654;
-        letter-spacing: 1px;
+        margin-bottom: 20px;
+        font-family: 'apex';
+        color: #ed3d49;
+        letter-spacing: 3px;
         line-height: 1.2;
         text-align: center;
-        position: relative;
-        left: 0;
-        margin: 0 auto;
     }
-
+    
     .content .par {
-        font-size: 16px;
-        line-height: 1.8;
-        color: white;
-        background-color: rgba(0, 0, 0, 0.7);
-        padding: 10px 15px;
-        border-radius: 8px;
-        width: 90%;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-        text-align: justify;
-        margin: 0 auto;
+        margin: 0;
+        font-size: 18px;
+        color: rgb(250, 250, 250);
+        width: 100%;
+        text-align: center;
+        font-family: 'Roboto', sans-serif;
+        font-weight: 600;
+        line-height: 1.5;
+        margin-bottom: 20px;
     }
 }
 
@@ -434,36 +436,34 @@ body {
     }
 
     .content {
-        position: static;
-        text-align: center;
-        max-width: 90%;
-        margin-bottom: 20px;
-        margin-top: 80%;
+        color: white;
+        max-width: 600px; 
+        margin: 400px auto 80px auto;
+        padding: 20px;
         display: flex;
         flex-direction: column;
-        gap: 10px;
+        align-items: center; 
+        text-align: center; 
     }
-
+    
     .content h1 {
-        position: static;
-        bottom: auto;
-        left: auto;
-        transform: none;
-        order: -1;
+        font-size: 55px;
+        margin-bottom: 5px;
+        font-family: 'apex';
+        color: #e03c47;
+        letter-spacing: 5px;
+        line-height: 1;
+        text-align: center;
     }
-
+    
     .content .par {
-        margin-top: 0;
-        font-size: 18px;
-        line-height: 1.8;
-        color: white;
-        background-color: rgba(0, 0, 0, 0.7);
-        padding: 10px 15px;
-        border-radius: 8px;
-        width: 45vh;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-        max-width: 800px;
-        text-align: justify;
+        margin: 0;
+        font-size: 24px;
+        color: rgb(255, 255, 255);
+        width: 100%;
+        text-align: center;
+        font-family: 'Roboto', sans-serif;
+        font-weight: 600;
     }
 
     .footer {

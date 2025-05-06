@@ -69,6 +69,10 @@ body {
     color: #ff4654;
 }
 
+.navbar ul li a.active{
+    color: #ff4654;
+}
+
 .report-button {
     background-color: #ff4654;
     color: white;
@@ -309,8 +313,13 @@ body {
     color: #ff4654;
 }
 
+
 @media (min-width:768px) {
     .menu-toggle {
+        display: none;
+    }
+
+    .menu-toggle-close {
         display: none;
     }
 }

@@ -54,6 +54,10 @@ body {
     transition: color 0.3s;
 }
 
+.navbar ul li a.active {
+    color: #ff4654;
+}
+
 .navbar ul li a:hover {
     color: #ff4654;
 }

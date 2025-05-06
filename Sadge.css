@@ -65,6 +65,10 @@ body {
     transition: color 0.3s;
 }
 
+.navbar ul li a.active{
+    color: #ff4654;
+}
+
 .navbar ul li a:hover {
     color: #ff4654;
 }
@@ -128,8 +132,8 @@ body {
     height: auto;
     position: absolute;
     top: 205px;
-    left: 410px;
-    transform: translateY(-50%);
+    left: 80%;
+    transform: translate(-50%, -50%);
 }
 
 .agent-logo img {
@@ -309,8 +313,13 @@ body {
     color: #ff4654;
 }
 
+
 @media (min-width:768px) {
     .menu-toggle {
+        display: none;
+    }
+
+    .menu-toggle-close {
         display: none;
     }
 }
